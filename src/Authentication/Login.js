@@ -21,7 +21,11 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from './firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+   const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -38,40 +42,45 @@ const Login = () => {
   
     const handleLogin = async (e) => {
       e.preventDefault();
-  
+    
       setEmailError('');
       setPasswordError('');
-  
+    
       if (!email) {
         setEmailError('Email is required');
       } else if (!validateEmail(email)) {
         setEmailError('Please enter a valid email');
       }
-  
+    
       if (!password) {
         setPasswordError('Password is required');
       }
-  
+    
       if (email && validateEmail(email) && password) {
         try {
           const userCredential = await signInWithEmailAndPassword(auth, email, password);
           const user = userCredential.user;
-  
-         
+    
+          // Fetch full name from Firestore
+          const userRef = doc(db, 'users', user.uid);
+          const userDoc = await getDoc(userRef);
+    
+          const fullName = userDoc.exists() ? userDoc.data().fullName : user.email;
+    
+          // Redirect to home page
+          navigate('/home'); // Update with your actual home route
+    
           Swal.fire({
             icon: 'success',
             title: 'Login Successful',
-            text: `Welcome, ${user.email}`,
-            showConfirmButton: false,
-            timer: 2000,
+            text: `Welcome, ${fullName}`, // Display full name if available
+            showConfirmButton: true,
           });
-  
         } catch (error) {
-        
           Swal.fire({
             icon: 'error',
             title: 'Login Failed',
-            text:"Email or Password Incorrect",
+            text: "Email or Password Incorrect",
             showConfirmButton: true,
           });
         }

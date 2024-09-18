@@ -1,21 +1,19 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore'; // Import Firestore
+import { getFirestore } from 'firebase/firestore';
+import { getDatabase } from 'firebase/database'; // Import Firebase Realtime Database
 
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_AUTH_DOMAIN',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_STORAGE_BUCKET',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: "AIzaSyACAR98dK2mdf3aUOINOKw-cyKYSbQ-3No",
+  authDomain: "restaurant-login-9f5dd.firebaseapp.com",
+  projectId: "restaurant-login-9f5dd",
+  storageBucket: "restaurant-login-9f5dd.appspot.com",
+  messagingSenderId: "383335544991",
+  appId: "1:383335544991:web:e53bc8103e10ca3cd90aaa"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase services
 const auth = getAuth(app);
-const db = getFirestore(app); // Initialize Firestore
+const db = getFirestore(app);// Initialize Firebase Realtime Database
 
-export { auth, db }; // Export Firestore too
+export { auth, db }; // Export Realtime Database

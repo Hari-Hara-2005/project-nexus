@@ -20,7 +20,10 @@ import { auth } from './firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from './firebaseConfig';
 const Register = () => {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -29,11 +32,20 @@ const Register = () => {
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
   const [fullNameError, setFullNameError] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false);
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const minLength = 6;
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  
+    return password.length >= minLength && hasLowerCase && hasNumber && hasSpecialChar;
   };
 
   const handleRegister = async (e) => {
@@ -62,8 +74,11 @@ const Register = () => {
     if (!password) {
       setPasswordError('Password is required');
       valid = false;
+    } else if (!validatePassword(password)) {
+      setPasswordError('Password must be at least 6 characters long and include letters, numbers, and special characters');
+      valid = false;
     }
-
+  
     if (!confirmPassword) {
       setConfirmPasswordError('Confirm Password is required');
       valid = false;
@@ -77,12 +92,18 @@ const Register = () => {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
+        // Store the user's full name in Firestore
+        const userRef = doc(db, 'users', user.uid); // Create a reference to the user document
+        await setDoc(userRef, {
+          fullName: fullName,
+          email: user.email,
+        });
+
         Swal.fire({
           icon: 'success',
           title: 'Registration Successful',
-          text: `Welcome, ${user.email}`,
-          showConfirmButton: false,
-          timer: 2000,
+          text: `Welcome, ${fullName}`,
+          showConfirmButton: true,
         });
 
         console.log(`User registered with name: ${fullName}`);
@@ -90,13 +111,13 @@ const Register = () => {
         Swal.fire({
           icon: 'error',
           title: 'Registration Failed',
-          text: error.message,
+          text: 'This Email Id Already Used',
           showConfirmButton: true,
         });
       }
     }
   };
-
+  
   const theme = createTheme({
     typography: {
       fontFamily: `'Open Sans', sans-serif`,
