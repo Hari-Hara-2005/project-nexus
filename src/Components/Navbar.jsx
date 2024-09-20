@@ -337,7 +337,7 @@ export default function Navbar(props) {
             sx={{
               backgroundColor: "transparent",
               py: [0, 1.5, 3],
-              px: [0, 1, 1, 1, "8%"],
+              px: [0, 1, 1, 1, "10%"],
               color: isDown ? "#000" : color, // Use the color prop here
               bgcolor: isDown ? "rgba(255,255,255,.6)" : null,
               backdropFilter: isDown ? "blur(25px)" : null,

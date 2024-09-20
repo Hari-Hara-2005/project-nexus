@@ -138,8 +138,7 @@ const Home = () => {
           </Box>
           <Box sx={{ flexGrow: 1, px: [1, 4], py: [10, 15] }}>
             <Grid container spacing={2.5}>
-              {/* First Box: 50% Off Promo */}
-              <Grid item xs={12} md={8}>
+              <Grid item size={{ xs: 12, md: 8 }}>
                 <Box
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-3.png")',
@@ -186,7 +185,7 @@ const Home = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4}>
+              <Grid item size={{ xs: 12, md: 4 }}>
                 <Box
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-2.png")',
@@ -211,7 +210,7 @@ const Home = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={4} sx={{ width: '100%' }}>
+              <Grid item size={{ xs: 12, md: 4 }}sx={{ width: '100%' }}>
                 <Box
                   sx={{
                     backgroundImage: 'url("/Assets/delivery bike.png")',
@@ -246,7 +245,7 @@ const Home = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} md={8} sx={{ width: '100%' }}>
+              <Grid item size={{ xs: 12, md: 8 }} sx={{ width: '100%' }}>
                 <Box
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-1.png")',
