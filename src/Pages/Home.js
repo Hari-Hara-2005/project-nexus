@@ -12,6 +12,7 @@ import OurProduct from "../Components/OurProduct";
 import { reasons, slideData } from "../utility/data";
 import CustomerReview from '../Components/CustomerReview';
 import Footer from '../Components/Footer';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const theme = createTheme({
@@ -20,16 +21,7 @@ const Home = () => {
     },
   });
 
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#e25b00',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
-    }),
-  }));
+
 
   const [person, setperson] = useState('');
   const [formData, setFormData] = useState({
@@ -55,7 +47,7 @@ const Home = () => {
     event.preventDefault();
     const newErrors = {};
 
-    // Check for required fields
+
     for (const [key, value] of Object.entries(formData)) {
       if (!value) {
         newErrors[key] = 'This field is required';
@@ -63,7 +55,7 @@ const Home = () => {
     }
 
     if (Object.keys(newErrors).length === 0) {
-      // Handle successful submission here
+
       console.log('Form submitted', formData);
     } else {
       setErrors(newErrors);
@@ -99,6 +91,9 @@ const Home = () => {
       }}
     />
   );
+  const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -109,34 +104,36 @@ const Home = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            height:['120vh','100vh'],
+            height: ['120vh', '100vh', '100vh'],
             width: '100%',
           }}
         > <Navbar color="#fff" />
           <ProductSlider />
         </Box>
-        <Box sx={{ px: [1.5, 5, 5, 4, 10] }}>
-          <Box sx={{ py: [5, 10], display: 'grid', gap: 2, justifyContent: 'center', gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(8, 2fr)' } }}>
+        <Box sx={{ px: [1.5, 1.5, 1, 4, 10] }}>
+          <Box sx={{ py: [5, 5, 5, 10], display: 'grid', gap: 2, justifyContent: 'center', gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(4, 1fr)', 'repeat(8 , 2fr)', 'repeat(8, 2fr)'] }}>
             {slideData.map((slide, index) => (
-              <Box key={index} >
-                <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
-                  <img src={slide.imgSrc} alt={slide.title} style={{ width: '50%' }} />
+              <Link to={slide.link} onClick={ScrollToTop}>
+                <Box key={index} >
+                  <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+                    <img src={slide.imgSrc} alt={slide.title} style={{ width: '50%' }} />
+                  </Box>
+                  <Typography sx={{ color: 'c7c7c7', textAlign: 'center', fontSize: '18px', fontWeight: 500 }}>{slide.title}</Typography>
                 </Box>
-                <Typography sx={{ color: 'c7c7c7', textAlign: 'center', fontSize: '18px', fontWeight: 500 }}>{slide.title}</Typography>
-              </Box>))};
+              </Link>))};
           </Box>
           <Box>
             <Box>
               <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', }}>Best Selling Items</Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%',fontWeight:'500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
+                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%', fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
               </Box>
             </Box>
             <Box>
               <BestProductSlider />
             </Box>
           </Box>
-          <Box sx={{ flexGrow: 1, px: [1, 4], py: [10, 15] }}>
+          <Box sx={{ flexGrow: 1, px: [1, 1, 2, 4], py: [10, 10, 10, 15] }}>
             <Grid container spacing={2.5}>
               <Grid item size={{ xs: 12, md: 8 }}>
                 <Box
@@ -146,23 +143,23 @@ const Home = () => {
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: '100%',
                     bgcolor: '#E25B00',
-                    height: ['430px', '580px'],
-                    borderRadius: ['10px', '15px'],
-                    padding: [4, 10],
+                    height: ['430px', '500px', '500px', '580px'],
+                    borderRadius: ['10px', '10px', '10px', '15px'],
+                    padding: [4, 4, 5, 10],
                     color: '#fff',
                     display: 'flex',
-                    alignItems: ['top', 'center'],
+                    alignItems: ['top', 'top', 'top', 'center'],
                   }}
                 >
                   <Box sx={{ width: { xs: '100%', md: '650px' } }}>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#FFCC40', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: { xs: '40px', md: '100px' } }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#FFCC40', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['40px', '60px', '100px'] }}>
                       50% off
                     </Typography>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: { xs: '24px', md: '36px' }, textTransform: 'uppercase' }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['24px', '40px', '36px'], textTransform: 'uppercase' }}>
                       A sweet and savory twist, served with chipotle mayo
                     </Typography>
                     <Button
-                      href="/cart"
+                      href="/pizza"
                       variant="contained"
                       endIcon={<ShoppingBagOutlinedIcon />}
                       sx={{
@@ -192,9 +189,9 @@ const Home = () => {
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-                    height: ['260px', '580px'],
-                    borderRadius: ['10px', '15px'],
-                    padding: [4, 7],
+                    height: ['260px', '400px', '500px', '580px'],
+                    borderRadius: ['10px', '10px', '10px', '15px'],
+                    padding: [4, 4, 4, 7],
                     color: '#fff',
                     display: 'flex',
                     alignItems: 'end',
@@ -204,21 +201,21 @@ const Home = () => {
                     <Typography sx={{ fontWeight: 'semi-bold', color: '#FFCC40', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: '20px', textTransform: 'uppercase' }}>
                       Bite into joy
                     </Typography>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['40px', '70px'], lineHeight: 1.2 }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['40px', '40px', '55px', '70px'], lineHeight: 1.2 }}>
                       Burger TNC Where Every Offer Delights!
                     </Typography>
                   </Box>
                 </Box>
               </Grid>
-              <Grid item size={{ xs: 12, md: 4 }}sx={{ width: '100%' }}>
+              <Grid item size={{ xs: 12, md: 4 }} sx={{ width: '100%' }}>
                 <Box
                   sx={{
                     backgroundImage: 'url("/Assets/delivery bike.png")',
                     backgroundPosition: 'left bottom',
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: '80%',
+                    backgroundSize: ['80%', '50%', '80%'],
                     bgcolor: '#FEAC02',
-                    height: ['500px', '580px'],
+                    height: ['500px', '500px', '500px', '580px'],
                     borderRadius: '15px',
                     padding: 5,
                     color: '#fff',
@@ -235,7 +232,7 @@ const Home = () => {
                         fontFamily: 'Anton, sans-serif',
                         letterSpacing: 1,
                         lineHeight: 1.3,
-                        fontSize: { xs: '40px', md: '60px' },
+                        fontSize: ['40px', '50px', '50px', '60px'],
                         textTransform: 'uppercase',
                         textAlign: 'right',
                       }}
@@ -252,12 +249,12 @@ const Home = () => {
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
-                    height: ['450px', '580px'],
+                    height: ['450px', '450px', '500px', '580px'],
                     borderRadius: '15px',
-                    padding: [4, 7],
+                    padding: [4, 4, 4, 7],
                     color: '#fff',
                     display: 'flex',
-                    alignItems: ['top', 'center'],
+                    alignItems: ['top', 'top', 'top', 'center'],
                   }}
                 >
                   <Box sx={{ width: { xs: '100%', md: '650px' } }}>
@@ -267,23 +264,23 @@ const Home = () => {
                         color: '#E25B00',
                         fontFamily: 'Anton, sans-serif',
                         letterSpacing: 1,
-                        fontSize: { xs: '30px', md: '70px' },
+                        fontSize: ['30px', '50px', '70px'],
                         textTransform: 'uppercase',
                       }}
                     >
                       Spicy
                     </Typography>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: { xs: '30px', md: '50px' }, textTransform: 'uppercase' }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['30px', '40px', '50px'], textTransform: 'uppercase' }}>
                       Limited-Time Special
                     </Typography>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: { xs: '24px', md: '36px' }, textTransform: 'uppercase' }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#fff', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['24px', '30px', '36px'], textTransform: 'uppercase' }}>
                       Double the Delight!
                     </Typography>
-                    <Typography sx={{ fontWeight: 'semi-bold', color: '#FFCC40', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: { xs: '36px', md: '44px' }, textTransform: 'uppercase', py: 4 }}>
+                    <Typography sx={{ fontWeight: 'semi-bold', color: '#FFCC40', fontFamily: 'Anton, sans-serif', letterSpacing: 1, fontSize: ['36px', '40px', '44px'], textTransform: 'uppercase', py: 4 }}>
                       50% off
                     </Typography>
                     <Button
-                      href="/cart"
+                      href="/pizza"
                       variant="contained"
                       endIcon={<ShoppingBagOutlinedIcon />}
                       sx={{
@@ -311,10 +308,10 @@ const Home = () => {
             <Box>
               <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Best Selling Items</Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%',fontWeight:'500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
+                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%', fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
               </Box>
             </Box>
-            <Box>
+            <Box sx={{ py: [1, 1, 1, 1, 5] }}>
               <OurProduct />
             </Box>
           </Box>
@@ -322,7 +319,7 @@ const Home = () => {
         <Box
           sx={{
             bgcolor: '#1A1A1A',
-            height: ['auto', '100vh'],
+            height: 'auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: ['middle', 'center'],
@@ -338,26 +335,26 @@ const Home = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              gap: [2, 4, 10], // Adjust gap on different screen sizes
+              gap: [2, 4, 10],
               flexWrap: 'wrap',
-              px: [2, 4], // Add padding for smaller screens
+              px: [2, 4],
             }}
           >
             <Box
               sx={{
                 bgcolor: '#fff',
-                width: ['100%', '100%', '680px'], // Full width on small screens, custom size on larger screens
-                height: ['auto', 'auto', '729px'], // Adjust height for responsiveness
-                p: [2, 5, 8], // Responsive padding
-                mb: [4, 0], // Add margin for small screens
+                width: ['100%', '100%', '100%', '680px'],
+                height: ['auto', 'auto', 'auto', '729px'],
+                p: [2, 5, 8],
+                mb: [4, 0],
               }}
             >
               <Typography
                 sx={{
-                  mb: [4, 6, 8], // Adjust margin bottom for different screen sizes
+                  mb: [4, 6, 8],
                   fontWeight: '600',
-                  fontSize: ['18px', '22px', '24px'], // Responsive font size
-                  width: ['100%', '80%', '65%'], // Responsive width
+                  fontSize: ['18px', '22px', '24px'],
+                  width: ['100%', '80%', '65%'],
                 }}
               >
                 Seamless Reservations for Unforgettable Dining Moments
@@ -448,12 +445,12 @@ const Home = () => {
               </form>
             </Box>
 
-            <Box sx={{ width: ['100%', '100%', '594px'], textAlign: 'left' }}> {/* Full width on small screens */}
+            <Box sx={{ width: ['100%', '100%', '100%', '594px'], textAlign: 'left' }}>
               <Typography
                 sx={{
                   color: '#FFB700',
                   fontWeight: 'bold',
-                  fontSize: ['20px', '24px'], // Responsive font size
+                  fontSize: ['20px', '24px'],
                   mb: 1,
                 }}
               >
@@ -464,7 +461,7 @@ const Home = () => {
                   color: '#fff',
                   fontWeight: '600',
                   lineHeight: 1.3,
-                  fontSize: ['32px', '40px', '46px'], // Responsive font size
+                  fontSize: ['32px', '40px', '46px'],
                   mb: [3, 4],
                 }}
               >
@@ -482,23 +479,23 @@ const Home = () => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ px: [4, 5, 5, 4, 10] }}>
-          <Box sx={{ py: [7,10 ]}}>
+        <Box sx={{ px: [4, 4, 5, 4, 10] }}>
+          <Box sx={{ py: [7, 7, 7] }}>
             <Box sx={{ mb: 8 }}>
               <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Why Choose Fastfood TNC?</Typography>
-              <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8 ,fontWeight:'500'}}>Unmatched Flavors, Quality, and Community Connection.</Typography>
+              <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Unmatched Flavors, Quality, and Community Connection.</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', columnGap: 14 }}>
               {reasons.map((reason, index) => (
                 <Box key={index} sx={{ mb: [8, 0] }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'center', mb: [2, 5] }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', mb: [2, 2, 5] }}>
                     <img src={reason.icon} alt={reason.title} style={{ width: '30%' }} />
                   </Box>
                   <Box sx={{ width: ['100%', '264px'], height: ['100%', '228px'], textAlign: 'center' }}>
-                    <Typography sx={{ fontSize: '18px', mb: 2, fontWeight:['600','500'] }}>
+                    <Typography sx={{ fontSize: '18px', mb: 2, fontWeight: ['600', '500'] }}>
                       {reason.title}
                     </Typography>
-                    <Typography sx={{ fontSize: '16px', color: '#8A9197',fontWeight:'500', lineHeight: 1.6 }}>
+                    <Typography sx={{ fontSize: '16px', color: '#8A9197', fontWeight: '500', lineHeight: 1.6 }}>
                       {reason.description}
                     </Typography>
                   </Box>
@@ -510,13 +507,13 @@ const Home = () => {
         <Box sx={{ bgcolor: '#1A1A1A', pt: 5 }}>
           <Box>
             <Typography sx={{ fontSize: '46px', fontWeight: 600, color: '#010f1c', textAlign: 'center', color: '#fff' }}>Testimonials</Typography>
-            <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8 ,fontWeight:'500'}}>Elevating Your Dining Experience</Typography>
+            <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Elevating Your Dining Experience</Typography>
           </Box>
           <CustomerReview />
         </Box>
-        {/* <Box>
+        <Box>
           <Footer />
-        </Box> */}
+        </Box>
       </ThemeProvider>
     </>
   )

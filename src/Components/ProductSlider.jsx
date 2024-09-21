@@ -76,10 +76,10 @@ export default function ProductSlider() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  px: [3, 5, 8, 2], // Adjusted padding for mobile views
+                  px: [3, 5, 8, 0, 2],
                   py: [3, 5, 6, 8],
-                  flexWrap: ["wrap", "nowrap"],
-                  gap: [2, 2, 2, 10], // Adjust gap for mobile views
+                  flexWrap: ["wrap", "wrap","nowrap"],
+                  gap: [2, 2, 2, 10], 
                 }}
               >
                 <Box
@@ -92,7 +92,7 @@ export default function ProductSlider() {
                     sx={{
                       color: "#FFB700",
                       fontWeight: "bold",
-                      fontSize: ["20px", "24px", "24px"], // Responsive font size
+                      fontSize: ["20px", "22px", "24px"], // Responsive font size
                       mb: 1,
                     }}
                   >
@@ -103,15 +103,15 @@ export default function ProductSlider() {
                       color: "#fff",
                       fontWeight: "bold",
                       lineHeight: ["50px", "60px", "80px"],
-                      fontSize: ["36px", "48px", "64px"], // Responsive font size
-                      mb: [2, 4],
+                      fontSize: ["36px", "48px", "64px"], 
+                      mb: [2,2, 4],
                     }}
                   >
                     {slide.subtitle}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: ["14px", "16px"],
+                      fontSize: ["14px","16px"],
                       lineHeight: "28px",
                       color: "#C7C7C7",
                     }}
@@ -119,7 +119,7 @@ export default function ProductSlider() {
                     {slide.description}
                   </Typography>
                   <Button
-                    href="/cart"
+                    href="/pizza"
                     variant="contained"
                     endIcon={<ArrowRightAltIcon />}
                     sx={{
@@ -140,11 +140,11 @@ export default function ProductSlider() {
                     Order now
                   </Button>
                 </Box>
-                <Box sx={{ width: ["100%", "80%", "rem"], mt: [2, 4, -10] }}>
+                <Box sx={{ width: ["100%", "80%","80%", "rem"], mt: [2, 2, -10] }}>
                   {" "}
                   <img
                     src={slide.imgSrc}
-                    style={{ width: "100%", height: "auto" }} // Ensure the image scales properly
+                    style={{ width: "100%", height: "auto" }}
                     alt={slide.title}
                   />
                 </Box>
@@ -172,8 +172,7 @@ export default function ProductSlider() {
           @media (max-width: 960px) { 
             .customSwiper {
               width: 95% !important;
-              height: 70% !important;
-              margin-top: 4rem !important;
+              margin-top: 2rem !important;
             }
           }
 
@@ -193,7 +192,7 @@ export default function ProductSlider() {
             justify-content: center !important;
             align-items: center !important;
           }
-    @media (max-width: 600px) { 
+    @media (max-width: 960px) { 
           .customSwiper .swiper-slide {
             text-align: center !important;
             font-size: 18px !important;

@@ -82,7 +82,7 @@ export default function Navbar(props) {
 
   const navItems = [
     {
-      link: "/",
+      link: "/home",
       name: "Home",
     },
     {
@@ -99,14 +99,10 @@ export default function Navbar(props) {
   ];
 
   const productMenuItems = [
-    { link: "/dates", name: "Dates" },
-    { link: "/dryfruits", name: "Dry Fruits" },
-    { link: "/seeds", name: "Seeds" },
-    { link: "/nuts", name: "Nuts" },
-    { link: "/chocolates", name: "Chocolates" },
-    { link: "/juice", name: "Drinks" },
-    { link: "/powder", name: "Powder" },
-    { link: "/biscuit", name: "Biscuits" },
+    { link: "/pizza", name: "Pizza" },
+    { link: "/burger", name: "Burgers" },
+    { link: "/juice", name: "Juices" },
+    { link: "/noodle", name: "Noodles" },
   ];
 
   const drawer = (
@@ -336,9 +332,9 @@ export default function Navbar(props) {
           <Toolbar
             sx={{
               backgroundColor: "transparent",
-              py: [0, 1.5, 3],
-              px: [0, 1, 1, 1, "10%"],
-              color: isDown ? "#000" : color, // Use the color prop here
+              py: [0, 0, 2, 1, 1],
+              px: [0, 1, 1, 6, "10%"],
+              color: isDown ? "#000" : color,
               bgcolor: isDown ? "rgba(255,255,255,.6)" : null,
               backdropFilter: isDown ? "blur(25px)" : null,
               borderRadius: isDown
@@ -357,7 +353,7 @@ export default function Navbar(props) {
                 justifyContent: "space-between",
               }}
             >
-              <Link color={"inherit"} underline="none" to="/">
+              <Link color={"inherit"} underline="none" to="/home">
                 <Box
                   sx={{
                     display: "flex",
@@ -368,12 +364,12 @@ export default function Navbar(props) {
                   }}
                 >
                   <ImageListItem>
-                    <Link color={"inherit"} underline="none" to="/">
+                    <Link color={"inherit"} underline="none" to="/home">
                       <Box
                         component="img"
                         src="./Assets/logo.png"
                         sx={{
-                          width: ["65%"],
+                          width: ["65%", "35%"],
                           p: 2,
                         }}
                         alt="logo"
@@ -402,22 +398,20 @@ export default function Navbar(props) {
               </Box>
             </Stack>
 
-            <Link color={"inherit"} underline="none" to="/">
-              <ImageListItem
-                sx={{ my: -5, display: { xs: "none", md: "block" } }}
-              >
+            <Link color={"inherit"} underline="none" to="/home">
+              <ImageListItem sx={{ display: ["none", "none", "none", "flex"] }}>
                 <Box
                   component="img"
                   src="./Assets/logo.png"
                   sx={{
-                    width: "35%",
+                    width: "40%",
                     p: 2.5,
                   }}
                   alt="logo"
                 />
               </ImageListItem>
             </Link>
-            <Box sx={{ display: { xs: "none", md: "flex", gap: "2rem" } }}>
+            <Box sx={{ display: { xs: "none", md: "flex", gap: "1rem" } }}>
               {navItems.map((item, index) =>
                 item.name === "Shop" ? (
                   <Box key={index}>
@@ -426,7 +420,7 @@ export default function Navbar(props) {
                       sx={{
                         fontSize: [17],
                         fontWeight: "600",
-                        color: isDown ? "#000" : color, // Use the color prop here
+                        color: isDown ? "#000" : color, 
                         textTransform: "none",
                         textDecoration: "none",
                         "&:hover": {
@@ -455,7 +449,7 @@ export default function Navbar(props) {
                       }}
                     >
                       <Link
-                        to="/dates"
+                        to="/pizza"
                         color="inherit"
                         underline="none"
                         onClick={ScrollToTop}
@@ -465,63 +459,29 @@ export default function Navbar(props) {
                           sx={{
                             fontSize: [18],
                             fontWeight: "600",
-                            color: "#000", // Use the color prop here
+                            color: "#000",
                           }}
                         >
-                          Dates
+                          Pizza
                         </MenuItem>
                       </Link>
-                      <MenuItem
-                        onClick={handleDropdownClose}
-                        sx={{
-                          fontSize: [18],
-                          fontWeight: "600",
-                          color: "#000", // Use the color prop here
-                        }}
+                      <Link
+                        to="/burger"
+                        color="inherit"
+                        underline="none"
+                        onClick={ScrollToTop}
                       >
-                        <Link
-                          to="/dryfruits"
-                          color="inherit"
-                          underline="none"
-                          onClick={ScrollToTop}
+                        <MenuItem
+                          onClick={handleDropdownClose}
+                          sx={{
+                            fontSize: [18],
+                            fontWeight: "600",
+                            color: "#000", 
+                          }}
                         >
-                          Dry Fruits
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        onClick={handleDropdownClose}
-                        sx={{
-                          fontSize: [18],
-                          fontWeight: "600",
-                          color: "#000", // Use the color prop here
-                        }}
-                      >
-                        <Link
-                          to="/seeds"
-                          color="inherit"
-                          underline="none"
-                          onClick={ScrollToTop}
-                        >
-                          Seed
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        onClick={handleDropdownClose}
-                        sx={{
-                          fontSize: [18],
-                          fontWeight: "600",
-                          color: "#000", // Use the color prop here
-                        }}
-                      >
-                        <Link
-                          to="/nuts"
-                          color="inherit"
-                          underline="none"
-                          onClick={ScrollToTop}
-                        >
-                          Nuts
-                        </Link>
-                      </MenuItem>
+                          Burgers
+                        </MenuItem>
+                      </Link>
                     </Menu>
                   </Box>
                 ) : (
@@ -531,7 +491,7 @@ export default function Navbar(props) {
                     sx={{
                       fontSize: [17],
                       fontWeight: "600",
-                      color: isDown ? "#000" : color, // Use the color prop here
+                      color: isDown ? "#000" : color, 
                       textTransform: "none",
                       textDecoration: "none",
                       "&:hover": {

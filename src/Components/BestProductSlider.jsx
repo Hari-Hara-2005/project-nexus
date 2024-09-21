@@ -1,131 +1,180 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation, Autoplay } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 
 const industryData = [
-    { id: "1", img: "/Assets/orange-juice.avif", title: "Almond", link: '/nuts' },
-    { id: "2", img: "Assets/hamburger.jpg", title: "Cashew", link: '/nuts' },
-    { id: "3", img: "/Assets/pizza.jpg", title: "Raisin", link: '/nuts' },
-    { id: "4", img: "/Assets/tall-glass.jpg", title: "Wallnut", link: '/nuts' },
-    { id: "5", img: "/Assets/pasta-cheese.avif", title: "Pistachios", link: '/nuts' },
-    { id: "6", img: "/Assets/pasta-plate.avif", title: "Pistachios", link: '/nuts' },
-    { id: "7", img: "/Assets/shawarma.jpg", title: "Pistachios", link: '/nuts' },
-    { id: "8", img: "/Assets/bowl-pasta.avif", title: "Pistachios", link: '/nuts' },
+  {
+    id: "1",
+    img: "/Assets/orange-juice.avif",
+    title: "Almond",
+    link: "/juice",
+  },
+  { id: "2", img: "Assets/hamburger.jpg", title: "Cashew", link: "/burger" },
+  { id: "3", img: "/Assets/pizza.jpg", title: "Raisin", link: "/pizza" },
+  { id: "4", img: "/Assets/tall-glass.jpg", title: "Wallnut", link: "/juice" },
+  {
+    id: "5",
+    img: "/Assets/pasta-cheese.avif",
+    title: "Pistachios",
+    link: "/noodle",
+  },
+  {
+    id: "6",
+    img: "/Assets/pasta-plate.avif",
+    title: "Pistachios",
+    link: "/noodle",
+  },
+  {
+    id: "7",
+    img: "/Assets/shawarma.jpg",
+    title: "Pistachios",
+    link: "/burger",
+  },
+  {
+    id: "8",
+    img: "/Assets/bowl-pasta.avif",
+    title: "Pistachios",
+    link: "/noodle",
+  },
 ];
 
 const BestProductSlider = () => {
-    const ScrollToTop = () => {
-        window.scrollTo(0, 0)
-    }
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [slidesPerView, setSlidesPerView] = useState(1);
+  const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(1);
 
-    const handleSlideChange = (swiper) => {
-        setActiveIndex(swiper.activeIndex);
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
+
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth >= 1700) {
+        setSlidesPerView(3);
+      } else if (window.innerWidth >= 1280) {
+        setSlidesPerView(3);
+      } else if (window.innerWidth >= 700) {
+        setSlidesPerView(3);
+      } else {
+        setSlidesPerView(1.34);
+      }
     };
 
-    useEffect(() => {
-        const updateSlidesPerView = () => {
-            if (window.innerWidth >= 1700) {
-                setSlidesPerView(3);
-            } else if (window.innerWidth >= 1280) {
-                setSlidesPerView(3);
-            } else if (window.innerWidth >= 700) {
-                setSlidesPerView(3);
-            } else {
-                setSlidesPerView(1.340);
-            }
-        };
+    updateSlidesPerView();
+    window.addEventListener("resize", updateSlidesPerView);
+    return () => window.removeEventListener("resize", updateSlidesPerView);
+  }, []);
 
-        updateSlidesPerView();
-        window.addEventListener('resize', updateSlidesPerView);
-        return () => window.removeEventListener('resize', updateSlidesPerView);
-    }, []);
+  const getBoxShadowColor = (index) => {
+    const colors = ["red", "blue", "yellow", "green", "purple"];
+    return colors[index % colors.length];
+  };
 
-    const getBoxShadowColor = (index) => {
-        const colors = ['red', 'blue', 'yellow', 'green', 'purple'];
-        return colors[index % colors.length];
-    };
-
-    return (
-        <>
-            <Box sx={{ width: '100%', height: ["25rem", "30rem", "40rem", "40rem", "40rem"], pt: 5 }}>
-                <Swiper
-                    slidesPerView={slidesPerView}
-                    navigation={true}
-                    centeredSlides={true}
-                    spaceBetween={20}
-                    modules={[Navigation, Autoplay]}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                    className="mySwiper"
-                    onSlideChange={handleSlideChange}
-                    breakpoints={{
-                        700: {
-                            slidesPerView: 3,
-                            centeredSlides: false,
-                        },
-                        1280: {
-                            slidesPerView: 3    ,
-                            centeredSlides: false,
-                        },
-                        1700: {
-                            slidesPerView: 3,
-                            centeredSlides: false,
-                        },
+  return (
+    <>
+      <Box
+        sx={{
+          width: "100%",
+          height: ["25rem", "30rem", "35rem", "40rem", "40rem"],
+          pt: 5,
+        }}
+      >
+        <Swiper
+          slidesPerView={slidesPerView}
+          navigation={true}
+          centeredSlides={true}
+          spaceBetween={20}
+          modules={[Navigation, Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="mySwiper"
+          onSlideChange={handleSlideChange}
+          breakpoints={{
+            700: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+            1280: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+            1700: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+          }}
+        >
+          {industryData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Box
+                sx={{
+                  position: "relative",
+                  width: {
+                    xs: "91%",
+                    sm: "90%",
+                    md: "90%",
+                    lg: "90%",
+                    xl: "88%",
+                  },
+                  height: {
+                    xs: "15rem",
+                    sm: "18rem",
+                    md: "20rem",
+                    lg: "20rem",
+                    xl: "25rem",
+                  },
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  cursor: "pointer",
+                  transform:
+                    index === activeIndex + Math.floor(slidesPerView / 2)
+                      ? "scale(1.20)"
+                      : "scale(1)",
+                  transition: "transform 0.3s ease",
+                  boxShadow:
+                    index === activeIndex + Math.floor(slidesPerView / 2)
+                      ? `0px 4px 20px ${getBoxShadowColor(index)}`
+                      : "none",
+                }}
+              >
+                <Link to={item.link} onClick={ScrollToTop}>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
                     }}
-                >
-                    {industryData.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <Box
-                                sx={{
-                                    position: 'relative',
-                                    width: { xs: "91%", sm: "85%", md: "90%", lg: "90%", xl: "88%" },
-                                    height: { xs: "15rem", sm: "18rem", md: "25rem", lg: "20rem", xl: "25rem" },
-                                    borderRadius: "8px",
-                                    overflow: 'hidden',
-                                    cursor: 'pointer',
-                                    transform: (index === activeIndex + Math.floor(slidesPerView / 2)) ? 'scale(1.20)' : 'scale(1)',
-                                    transition: 'transform 0.3s ease',
-                                    boxShadow: (index === activeIndex + Math.floor(slidesPerView / 2)) ? `0px 4px 20px ${getBoxShadowColor(index)}` : 'none',
-                                }}
-                            >
-                                <Link to={item.link} onClick={ScrollToTop}>
-                                    <img
-                                        src={item.img}
-                                        alt={item.title}
-                                        style={{
-                                            width: '100%',  
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
-                                    <Box
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 0,
-                                            width: '100%',
-                                            bgcolor: 'rgba(0, 0, 0, 0.6)',
-                                            color: '#fff',
-                                            textAlign: 'center',
-                                            p: 1,
-                                        }}
-                                    >
-                                        <Typography sx={{ fontSize: ['1rem'] }}>
-                                            {item.title}
-                                        </Typography>
-                                    </Box>
-                                </Link>
-                            </Box>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </Box>
-            <style>
-                {`
+                  />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: 0,
+                      width: "100%",
+                      bgcolor: "rgba(0, 0, 0, 0.6)",
+                      color: "#fff",
+                      textAlign: "center",
+                      p: 1,
+                    }}
+                  >
+                    <Typography sx={{ fontSize: ["1rem"] }}>
+                      {item.title}
+                    </Typography>
+                  </Box>
+                </Link>
+              </Box>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
+      <style>
+        {`
                     .swiper {
                         width: 100%;
                         height: 100%;
@@ -208,9 +257,9 @@ const BestProductSlider = () => {
                         }
                     }
                 `}
-            </style>
-        </>
-    );
+      </style>
+    </>
+  );
 };
 
 export default BestProductSlider;

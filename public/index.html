@@ -5,16 +5,60 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Delicious fast food restaurant offering burgers, pizzas, and more. Order online for delivery or takeout!" />
+    <meta name="keywords" content="fast food, restaurant, burgers, pizzas, takeout, delivery, snacks" />
+    <meta name="author" content="Your Restaurant Name" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <title>React App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <title>FastFood TNC</title>
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="FastFood TNC - Delicious Fast Food" />
+    <meta property="og:description" content="Enjoy the best burgers, pizzas, and more from FastFood TNC. Order now for delivery or takeout!" />
+    <meta property="og:image" content="%PUBLIC_URL%/path/to/your/image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FastFood TNC - Delicious Fast Food" />
+    <meta name="twitter:description" content="Enjoy the best burgers, pizzas, and more from FastFood TNC. Order now for delivery or takeout!" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/path/to/your/image.jpg" />
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "FastFood TNC",
+        "image": "%PUBLIC_URL%/path/to/your/image.jpg",
+        "description": "Delicious fast food restaurant offering burgers, pizzas, and more. Order online for delivery or takeout!",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Fast Food Lane",
+          "addressLocality": "Your City",
+          "addressRegion": "Your State",
+          "postalCode": "12345",
+          "addressCountry": "Your Country"
+        },
+        "telephone": "+1-234-567-8901",
+        "url": "https://yourwebsite.com",
+        "menu": "https://yourwebsite.com/menu",
+        "openingHours": "Mo-Su 10:00-22:00"
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

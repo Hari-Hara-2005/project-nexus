@@ -82,10 +82,10 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 const StyledMedia = styled(CardMedia)`
-  height: 220px;
+  height: 250px;
 
-  @media (min-width: 600px) {
-    height: 350px;
+  @media (min-width: 900px) {
+    height: 300px;
   }
 `;
 
@@ -208,7 +208,7 @@ const OurProduct = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2500); // Simulate a 2-second loading time
+    }, 2500); 
   }, []);
 
   return (
