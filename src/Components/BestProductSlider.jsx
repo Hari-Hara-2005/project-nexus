@@ -72,7 +72,7 @@ const BestProductSlider = () => {
   }, []);
 
   const getBoxShadowColor = (index) => {
-    const colors = ["red", "blue", "yellow", "green", "purple"];
+    const colors = ["red", "purple", "yellow", "green", "purple"];
     return colors[index % colors.length];
   };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -8,7 +8,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "swiper/css/effect-fade";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const slideData = [
   {
     title: "Discover Delight at Fastfood TNC",
@@ -53,12 +54,14 @@ export default function ProductSlider() {
       fontFamily: `'Jost', sans-serif`,
     },
   });
+  
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Swiper
+        
           direction={"vertical"}
           slidesPerView={1}
           spaceBetween={30}
@@ -78,8 +81,8 @@ export default function ProductSlider() {
                   justifyContent: "center",
                   px: [3, 5, 8, 0, 2],
                   py: [3, 5, 6, 8],
-                  flexWrap: ["wrap", "wrap","nowrap"],
-                  gap: [2, 2, 2, 10], 
+                  flexWrap: ["wrap", "wrap", "nowrap"],
+                  gap: [2, 2, 2, 10],
                 }}
               >
                 <Box
@@ -92,7 +95,7 @@ export default function ProductSlider() {
                     sx={{
                       color: "#FFB700",
                       fontWeight: "bold",
-                      fontSize: ["20px", "22px", "24px"], // Responsive font size
+                      fontSize: ["20px", "22px", "24px"],
                       mb: 1,
                     }}
                   >
@@ -103,15 +106,15 @@ export default function ProductSlider() {
                       color: "#fff",
                       fontWeight: "bold",
                       lineHeight: ["50px", "60px", "80px"],
-                      fontSize: ["36px", "48px", "64px"], 
-                      mb: [2,2, 4],
+                      fontSize: ["36px", "48px", "64px"],
+                      mb: [2, 2, 4],
                     }}
                   >
                     {slide.subtitle}
                   </Typography>
                   <Typography
                     sx={{
-                      fontSize: ["14px","16px"],
+                      fontSize: ["14px", "16px"],
                       lineHeight: "28px",
                       color: "#C7C7C7",
                     }}
@@ -140,7 +143,9 @@ export default function ProductSlider() {
                     Order now
                   </Button>
                 </Box>
-                <Box sx={{ width: ["100%", "80%","80%", "rem"], mt: [2, 2, -10] }}>
+                <Box
+                  sx={{ width: ["100%", "80%", "80%", "rem"], mt: [2, 2, -10] }}
+                >
                   {" "}
                   <img
                     src={slide.imgSrc}

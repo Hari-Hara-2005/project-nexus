@@ -470,7 +470,8 @@ const Burger = () => {
                 <Box sx={{ textAlign: "center", px: [2, 3, 0], zIndex: 30 }}>
                     <Grid container spacing={6} justifyContent="center" alignItems="center" sx={{ py: 10 }}>
                         {burgers.map((burger) => (
-                            <Grid item key={burger.id} xs={12} sm={6} md={3.8} lg={3.3}>
+                            <Grid item key={burger.id} xs={12} sm={6} md={3.8} lg={3.3} data-aos="zoom-in-up"
+                                data-aos-duration="2500">
                                 <ProductCard product={burger} isLoading={isLoading} />
                             </Grid>
                         ))}

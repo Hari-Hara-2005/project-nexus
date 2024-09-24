@@ -330,6 +330,7 @@ export default function Navbar(props) {
           }}
         >
           <Toolbar
+          
             sx={{
               backgroundColor: "transparent",
               py: [0, 0, 2, 1, 1],

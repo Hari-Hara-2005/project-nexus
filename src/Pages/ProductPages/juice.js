@@ -409,49 +409,34 @@ const Juice = () => {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Box
-                        sx={{
-                            backgroundImage: `url(${"/Assets/background_img.png"})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            height: ['372px'],
-                            width: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <Navbar color="#fff" />
-                        <Box>
-                            <Typography
-                                sx={{
-                                    color: "#fff",
-                                    fontWeight: "bold",
-                                    fontSize: ["20px", "22px", "36px"],
-                                    my: 1,
-                                    textAlign: 'center'
-                                }}
-                            >
-                                Juices
-                            </Typography>
-                            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                                <Link to="/home">
-                                    <Typography
-                                        sx={{
-                                            color: "#9A9EA1",
-                                            fontWeight: "bold",
-                                            fontSize: '18px',
-                                        }}
-                                    >
-                                        Home
-                                    </Typography>
-                                </Link>
-                                <ArrowRightAltIcon sx={{
-                                    color: "#9A9EA1",
-                                    fontWeight: "bold",
-                                    fontSize: '36px',
-                                }} />
+                    sx={{
+                        backgroundImage: `url(${"/Assets/background_img.png"})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        height: ['372px'],
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                >
+                    <Navbar color="#fff" />
+                    <Box>
+                        <Typography
+                            sx={{
+                                color: "#fff",
+                                fontWeight: "bold",
+                                fontSize: ["20px", "22px", "36px"],
+                                my: 1,
+                                textAlign: 'center'
+                            }}
+                        >
+                            Juices
+                        </Typography>
+                        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                            <Link to="/home">
                                 <Typography
                                     sx={{
                                         color: "#9A9EA1",
@@ -459,25 +444,41 @@ const Juice = () => {
                                         fontSize: '18px',
                                     }}
                                 >
-                                    Juices
+                                    Home
                                 </Typography>
-                            </Box>
-                        </Box>
-                        <Box sx={{ mt: 5 }}>
-                            <ProductNavbar />
+                            </Link>
+                            <ArrowRightAltIcon sx={{
+                                color: "#9A9EA1",
+                                fontWeight: "bold",
+                                fontSize: '36px',
+                            }} />
+                            <Typography
+                                sx={{
+                                    color: "#9A9EA1",
+                                    fontWeight: "bold",
+                                    fontSize: '18px',
+                                }}
+                            >
+                                Juices
+                            </Typography>
                         </Box>
                     </Box>
+                    <Box sx={{ mt: 5 }}>
+                        <ProductNavbar />
+                    </Box>
+                </Box>
                 <Box sx={{ textAlign: "center", px: [2, 3, 0], zIndex: 30 }}>
                     <Grid container spacing={6} justifyContent="center" alignItems="center" sx={{ py: 10 }}>
                         {juices.map((juice) => (
-                            <Grid item key={juice.id} xs={12} sm={6} md={3.8} lg={3.3}>
+                            <Grid item key={juice.id} xs={12} sm={6} md={3.8} lg={3.3} data-aos="zoom-in-up"
+                                data-aos-duration="2500">
                                 <ProductCard product={juice} isLoading={isLoading} />
                             </Grid>
                         ))}
                     </Grid>
                 </Box>
             </ThemeProvider>
-            <Footer/>
+            <Footer />
         </>
     );
 };

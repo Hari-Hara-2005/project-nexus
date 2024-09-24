@@ -13,16 +13,14 @@ const loadCartFromLocalStorage = () => {
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: loadCartFromLocalStorage(), // Load cart from localStorage
+        items: loadCartFromLocalStorage(), 
     },
     reducers: {
         addToCart: (state, action) => {
             const itemIndex = state.items.findIndex(item => item.id === action.payload.id);
-            if (itemIndex >= 0) {
-                // If the item already exists in the cart, update its quantity or other properties
+            if (itemIndex >= 0) { 
                 state.items[itemIndex] = { ...state.items[itemIndex], ...action.payload };
             } else {
-                // If it's a new item, add it to the cart
                 state.items.push(action.payload);
             }
             try {

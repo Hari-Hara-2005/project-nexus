@@ -92,9 +92,10 @@ const Cart = () => {
                     </Box>
                 </Box>
                 <Box sx={{ textAlign: 'center', px: [2, 3, 0], py: [15], zIndex: 30 }}>
-                    <Grid container spacing={6} justifyContent="center" alignItems="center">
+                    <Grid container spacing={6} justifyContent="center" alignItems="center" >
                         {cartItems.map((item) => (
-                            <Grid item key={item.id} xs={12} sm={6} md={3.8} lg={3.6}>
+                            <Grid item key={item.id} xs={12} sm={6} md={3.8} lg={3.6} data-aos="zoom-in-up"
+                                data-aos-duration="2500">
                                 <CartItemCard
                                     product={item}
                                     isLoading={false}
@@ -105,7 +106,7 @@ const Cart = () => {
                         ))}
                     </Grid>
                 </Box>
-                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, gap: '5rem',mb:5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, gap: '5rem', mb: 5 }}>
                     {cartItems.length > 0 && (
                         <Button variant="contained" sx={{
                             bgcolor: "#92553D", textTransform: 'none', borderRadius: '10px', px: [4], py: 1.5, fontSize: 15, fontWeight: 600, '&:hover': {

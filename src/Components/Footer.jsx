@@ -23,7 +23,15 @@ const Footer = () => {
     <Box sx={{ bgcolor: "#1A1A1A", color: "white", px: { xs: 2, md: 6 } }}>
       <Box sx={{ py: 5 }}>
         <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            data-aos-easing="ease-in-sine"
+          >
             <Typography variant="h6" gutterBottom>
               Elevate bites, build community, deliver culinary excellence with
               FastFood TNC
@@ -43,7 +51,15 @@ const Footer = () => {
               <Typography sx={{ ml: 2 }}>exampleX@gmail.com</Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={2}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={2}
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-sine"
+          >
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
@@ -69,7 +85,15 @@ const Footer = () => {
             ))}
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            data-aos="fade-right"
+            data-aos-duration="2500"
+            data-aos-easing="ease-in-sine"
+          >
             <Typography variant="h6" gutterBottom>
               Opening Hours
             </Typography>
@@ -78,7 +102,15 @@ const Footer = () => {
             <Typography>Saturday</Typography>
             <Typography>12:00 PM to 6:00 PM</Typography>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={3}
+            data-aos="fade-right"
+            data-aos-duration="3000"
+            data-aos-easing="ease-in-sine"
+          >
             <Typography variant="h6" gutterBottom>
               Newsletter Subscribe
             </Typography>

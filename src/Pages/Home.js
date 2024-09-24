@@ -107,7 +107,8 @@ const Home = () => {
             height: ['120vh', '100vh', '100vh'],
             width: '100%',
           }}
-        > <Navbar color="#fff" />
+        >
+          <Navbar color="#fff" />
           <ProductSlider />
         </Box>
         <Box sx={{ px: [1.5, 1.5, 1, 4, 10] }}>
@@ -115,7 +116,7 @@ const Home = () => {
             {slideData.map((slide, index) => (
               <Link to={slide.link} onClick={ScrollToTop}>
                 <Box key={index} >
-                  <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }} data-aos="zoom-in" data-aos-duration="2000" >
                     <img src={slide.imgSrc} alt={slide.title} style={{ width: '50%' }} />
                   </Box>
                   <Typography sx={{ color: 'c7c7c7', textAlign: 'center', fontSize: '18px', fontWeight: 500 }}>{slide.title}</Typography>
@@ -124,9 +125,9 @@ const Home = () => {
           </Box>
           <Box>
             <Box>
-              <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', }}>Best Selling Items</Typography>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%', fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
+              <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', }}>Best Selling Items</Typography>
+              <Box data-aos="zoom-in-up" data-aos-duration="2500" sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: ['95%', '50%'], fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
               </Box>
             </Box>
             <Box>
@@ -137,6 +138,10 @@ const Home = () => {
             <Grid container spacing={2.5}>
               <Grid item size={{ xs: 12, md: 8 }}>
                 <Box
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="2000"
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-3.png")',
                     backgroundPosition: 'right bottom',
@@ -184,6 +189,10 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 4 }}>
                 <Box
+                  data-aos="fade-left"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="2000"
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-2.png")',
                     backgroundPosition: 'center',
@@ -209,6 +218,10 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 4 }} sx={{ width: '100%' }}>
                 <Box
+                  data-aos="fade-right"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="2000"
                   sx={{
                     backgroundImage: 'url("/Assets/delivery bike.png")',
                     backgroundPosition: 'left bottom',
@@ -244,6 +257,10 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 8 }} sx={{ width: '100%' }}>
                 <Box
+                  data-aos="fade-left"
+                  data-aos-offset="300"
+                  data-aos-easing="ease-in-sine"
+                  data-aos-duration="2000"
                   sx={{
                     backgroundImage: 'url("/Assets/bg image-1.png")',
                     backgroundPosition: 'center',
@@ -306,9 +323,9 @@ const Home = () => {
           </Box>
           <Box>
             <Box>
-              <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Best Selling Items</Typography>
+              <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Best Selling Items</Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: '95%', fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
+                <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, width: ['95%', '50%'], fontWeight: '500' }}>Inspect background group content align export move. Background prototype arrange team inspect clip.Vector comment link frame link group.</Typography>
               </Box>
             </Box>
             <Box sx={{ py: [1, 1, 1, 1, 5] }}>
@@ -348,6 +365,8 @@ const Home = () => {
                 p: [2, 5, 8],
                 mb: [4, 0],
               }}
+              data-aos="fade-up"
+              data-aos-duration="3000"
             >
               <Typography
                 sx={{
@@ -445,7 +464,12 @@ const Home = () => {
               </form>
             </Box>
 
-            <Box sx={{ width: ['100%', '100%', '100%', '594px'], textAlign: 'left' }}>
+            <Box
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1500"
+              sx={{ width: ['100%', '100%', '100%', '594px'], textAlign: 'left' }}>
               <Typography
                 sx={{
                   color: '#FFB700',
@@ -482,12 +506,12 @@ const Home = () => {
         <Box sx={{ px: [4, 4, 5, 4, 10] }}>
           <Box sx={{ py: [7, 7, 7] }}>
             <Box sx={{ mb: 8 }}>
-              <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Why Choose Fastfood TNC?</Typography>
-              <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Unmatched Flavors, Quality, and Community Connection.</Typography>
+              <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Why Choose Fastfood TNC?</Typography>
+              <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Unmatched Flavors, Quality, and Community Connection.</Typography>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', columnGap: 14 }}>
               {reasons.map((reason, index) => (
-                <Box key={index} sx={{ mb: [8, 0] }}>
+                <Box data-aos="zoom-in" data-aos-duration="2500" key={index} sx={{ mb: [8, 0] }}>
                   <Box sx={{ display: 'flex', justifyContent: 'center', mb: [2, 2, 5] }}>
                     <img src={reason.icon} alt={reason.title} style={{ width: '30%' }} />
                   </Box>
@@ -506,8 +530,8 @@ const Home = () => {
         </Box>
         <Box sx={{ bgcolor: '#1A1A1A', pt: 5 }}>
           <Box>
-            <Typography sx={{ fontSize: '46px', fontWeight: 600, color: '#010f1c', textAlign: 'center', color: '#fff' }}>Testimonials</Typography>
-            <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Elevating Your Dining Experience</Typography>
+            <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: '46px', fontWeight: 600, color: '#010f1c', textAlign: 'center', color: '#fff' }}>Testimonials</Typography>
+            <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Elevating Your Dining Experience</Typography>
           </Box>
           <CustomerReview />
         </Box>

@@ -114,7 +114,7 @@ export const About = () => {
                             sx={{
                                 color: "#fff",
                                 fontWeight: "bold",
-                                fontSize: ["20px", "22px", "36px"], 
+                                fontSize: ["20px", "22px", "36px"],
                                 my: 1,
                                 textAlign: 'center'
                             }}
@@ -159,6 +159,8 @@ export const About = () => {
                             }}
                         >
                             <img
+                                data-aos="zoom-out"
+                                data-aos-duration="2000"
                                 src="/Assets/shopimg.jpg"
                                 alt="Store Image"
                                 style={{
@@ -190,7 +192,7 @@ export const About = () => {
                                     borderBottom: ['2px solid #92553D', 'none'], px: [0, 0, 5], pb: [2, 2, 0],
                                 }}>
                                     <Typography variant="h6" component="div" sx={{ mb: -1, color: '#92553D', fontWeight: 600 }}>
-                                        <SlotCounter value={11} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={10} />+
+                                        <SlotCounter value={11} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={5} />+
                                     </Typography>
                                     <Typography variant="h6" component="div" sx={{ color: '#000', fontWeight: 600, fontSize: 15 }}>
                                         Stores
@@ -201,7 +203,7 @@ export const About = () => {
                                     borderBottom: ['2px solid #92553D', 'none'], px: [0, 0, 5], pb: [2, 2, 0], ml: [0, 0, 4]
                                 }}>
                                     <Typography variant="h6" component="div" sx={{ mb: -1, color: '#92553D', fontWeight: 600, }}>
-                                        <SlotCounter value={45000} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={10} />+
+                                        <SlotCounter value={45000} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={5} />+
                                     </Typography>
                                     <Typography variant="h6" component="div" sx={{ color: '#000', fontWeight: 600, fontSize: 15, lineHeight: [1.3, 1.5] }}>
                                         Happy Customers
@@ -209,7 +211,7 @@ export const About = () => {
                                 </Box>
                                 <Box sx={{ ml: [0, 0, 4], pt: [2, 0, 0] }}>
                                     <Typography variant="h6" component="div" sx={{ mb: -1, color: '#92553D', fontWeight: 600, }}>
-                                        <SlotCounter value={1000} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={10} />+
+                                        <SlotCounter value={1000} animateOnVisible={{ triggerOnce: false, rootMargin: '0px 0px -100px 0px' }} duration={5} />+
                                     </Typography>
                                     <Typography variant="h6" component="div" sx={{ color: '#000', fontWeight: 600, fontSize: 15, lineHeight: [1.3, 1.5] }}>
                                         Order Delivered
@@ -217,7 +219,8 @@ export const About = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box sx={{ width: ["100%", "100%", "100%", "40%", "25%"], px: [2, 7, 5], textAlign: 'justify' }}>
+                        <Box
+                            sx={{ width: ["100%", "100%", "100%", "40%", "25%"], px: [2, 7, 5], textAlign: 'justify' }}>
                             <Typography sx={{
                                 fontSize: ['1.5rem', '1.5rem', '1.5rem'],
                                 fontWeight: '600',
@@ -260,9 +263,10 @@ export const About = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Box sx={{ px: [2, 10], py: [0, 5] }}>
+                <Box sx={{ px: [2, 10], py: [0, 5] }} >
                     <FeatureContainer>
-                        <Grid container spacing={0} justifyContent="center">
+                        <Grid container spacing={0} justifyContent="center" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom"  data-aos-duration="2000">
                             <FeatureItem item xs={6} md={3}>
                                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                                     <Player
@@ -322,8 +326,8 @@ export const About = () => {
                     </FeatureContainer>
                     <Box sx={{ py: 15 }}>
                         <Box sx={{ mb: 5 }}>
-                            <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Our expert chef</Typography>
-                            <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Unmatched Flavors, Quality, and Community Connection.</Typography>
+                            <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Our expert chef</Typography>
+                            <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500' }}>Unmatched Flavors, Quality, and Community Connection.</Typography>
                         </Box>
                         <ChefCard />
                     </Box>
@@ -338,12 +342,12 @@ export const About = () => {
                     }}
                 >
                     <Box sx={{ py: 5 }}>
-                        <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Our expert chef</Typography>
+                        <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center' }}>Our expert chef</Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                            <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500', width: ['90%', '90%', '35%'] }}>Dictumst vel enim massa neque lacus eu lorem suscipit. Habitasse aliquet elit ultricies in facilisi. Habitasse aliquet elit ultricies in facilisi.</Typography>
+                            <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500', width: ['90%', '90%', '35%'] }}>Dictumst vel enim massa neque lacus eu lorem suscipit. Habitasse aliquet elit ultricies in facilisi. Habitasse aliquet elit ultricies in facilisi.</Typography>
                         </Box>
                     </Box>
-                    <Box sx={{ px: [5, 5, 10] ,py:5}}>
+                    <Box sx={{ px: [5, 5, 10], py: 5 }}>
                         <Faq />
                     </Box>
                 </Box>

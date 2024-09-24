@@ -126,7 +126,7 @@ const ContactUs = () => {
                     }}
                 >
                     <Navbar color="#fff" />
-                    <Box>
+                    <Box >
                         <Typography
                             sx={{
                                 color: "#fff",
@@ -169,12 +169,15 @@ const ContactUs = () => {
                 </Box>
                 <Box sx={{ pt: 5 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', lineHeight: 1.4, mb: 2, width: ['90%', '90%', '90%', '90%', '40%'] }}>Let's Connect and Create Memorable Experiences Together</Typography>
+                        <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', lineHeight: 1.4, mb: 2, width: ['90%', '90%', '90%', '90%', '40%'] }}>Let's Connect and Create Memorable Experiences Together</Typography>
                     </Box>
-                    <Typography sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500', }}>Reach Out for Reservations, Inquiries, or Just to Say Hello –We're Here to Serve You.</Typography>
+                    <Typography data-aos="zoom-in-up" data-aos-duration="2500" sx={{ fontSize: '16px', color: '#A0A5AA', textAlign: 'center', lineHeight: 1.8, fontWeight: '500', }}>Reach Out for Reservations, Inquiries, or Just to Say Hello –We're Here to Serve You.</Typography>
                 </Box>
                 <Box sx={{ flexGrow: 1, px: [3, 3, 10, 10, 36], py: 5 }}>
-                    <Grid container spacing={10} justifyContent="center">
+                    <Grid container spacing={10} justifyContent="center"
+                        data-aos="flip-left"
+                        data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2500">
                         {contactInfo.map((info, index) => (
                             <Grid item xs={12} sm={6} md={4} key={index}>
                                 <Card
@@ -210,10 +213,12 @@ const ContactUs = () => {
                     </Grid>
                 </Box>
                 <Box sx={{ pt: 5 }}>
-                    <Typography sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', lineHeight: 1.4, my: 8 }}>Get in Touch with FastFood TNC</Typography>
+                    <Typography data-aos="zoom-in-up" data-aos-duration="2000" sx={{ fontSize: ['30px', '46px'], fontWeight: 600, color: '#010f1c', textAlign: 'center', lineHeight: 1.4, my: 8 }}>Get in Touch with FastFood TNC</Typography>
                 </Box>
                 <Box
                     sx={{ pb: 10 }}
+                    data-aos="fade-down"
+                     data-aos-duration="2500"
                 >
                     <Box
                         sx={{

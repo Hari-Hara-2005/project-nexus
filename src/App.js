@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Register from './Authentication/Register';
@@ -12,8 +13,15 @@ import Juice from './Pages/ProductPages/juice';
 import Noodle from './Pages/ProductPages/noodles';
 import Cart from './Pages/Cart';
 import ContactUs from './Pages/ContactUs';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <Provider store={store}>
       <BrowserRouter>

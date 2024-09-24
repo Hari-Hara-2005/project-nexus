@@ -215,7 +215,7 @@ const OurProduct = () => {
     <Box sx={{ textAlign: "center", px: [1.5, 3, 0], py: [5], zIndex: 30 }}>
       <Grid container spacing={6} justifyContent="center" alignItems="center">
         {dates.map((date) => (
-          <Grid item key={date.id} xs={12} sm={6} md={3.8} lg={3.6}>
+          <Grid data-aos="fade-right"  data-aos-duration="3000" item key={date.id} xs={12} sm={6} md={3.8} lg={3.6}>
             <ProductCard product={date} isLoading={isLoading} />
           </Grid>
         ))}
