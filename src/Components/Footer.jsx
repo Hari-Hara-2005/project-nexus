@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography, TextField, Button, IconButton } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -18,7 +18,22 @@ const navLinks = [
 const ScrollToTop = () => {
   window.scrollTo(0, 0);
 };
+
 const Footer = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+  const [isTablet, setIsTablet] = useState(
+    window.innerWidth >= 600 && window.innerWidth < 960
+  );
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 600);
+    setIsTablet(window.innerWidth >= 600 && window.innerWidth < 960);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <Box sx={{ bgcolor: "#1A1A1A", color: "white", px: { xs: 2, md: 6 } }}>
       <Box sx={{ py: 5 }}>
@@ -29,7 +44,7 @@ const Footer = () => {
             sm={6}
             md={4}
             data-aos="fade-right"
-            data-aos-duration="1500"
+            data-aos-duration={isMobile || isTablet ? "1000" : "1500"}
             data-aos-easing="ease-in-sine"
           >
             <Typography variant="h6" gutterBottom>
@@ -57,7 +72,7 @@ const Footer = () => {
             sm={6}
             md={2}
             data-aos="fade-right"
-            data-aos-duration="2000"
+            data-aos-duration={isMobile || isTablet ? "1000" : "2000"}
             data-aos-easing="ease-in-sine"
           >
             <Typography variant="h6" gutterBottom>
@@ -91,7 +106,7 @@ const Footer = () => {
             sm={6}
             md={3}
             data-aos="fade-right"
-            data-aos-duration="2500"
+            data-aos-duration={isMobile || isTablet ? "1000" : "2500"}
             data-aos-easing="ease-in-sine"
           >
             <Typography variant="h6" gutterBottom>
@@ -108,7 +123,7 @@ const Footer = () => {
             sm={6}
             md={3}
             data-aos="fade-right"
-            data-aos-duration="3000"
+            data-aos-duration={isMobile || isTablet ? "1000" : "3000"}
             data-aos-easing="ease-in-sine"
           >
             <Typography variant="h6" gutterBottom>

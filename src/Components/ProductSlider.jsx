@@ -3,7 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, EffectFade } from "swiper/modules";
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
@@ -49,20 +55,21 @@ const slideData = [
 ];
 
 export default function ProductSlider() {
-  const theme = createTheme({
+  const fonttheme = createTheme({
     typography: {
       fontFamily: `'Jost', sans-serif`,
     },
   });
-  
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={fonttheme}>
         <CssBaseline />
         <Swiper
-        
-          direction={"vertical"}
+          direction={isMobile || isTablet ? "horizontal" : "vertical"}
           slidesPerView={1}
           spaceBetween={30}
           pagination={{
@@ -78,11 +85,12 @@ export default function ProductSlider() {
                 sx={{
                   display: "flex",
                   alignItems: "center",
+                  flexDirection: ["column", "column", "row"],
                   justifyContent: "center",
                   px: [3, 5, 8, 0, 2],
-                  py: [3, 5, 6, 8],
+                  py: [0, 0, 6, 8],
                   flexWrap: ["wrap", "wrap", "nowrap"],
-                  gap: [2, 2, 2, 10],
+                  gap: [2, 0, 2, 10],
                 }}
               >
                 <Box
@@ -133,7 +141,7 @@ export default function ProductSlider() {
                       borderRadius: "50px",
                       border: "2px solid #FFB700",
                       px: [2, 3], // Responsive padding
-                      my: [2, 5],
+                      my: [2,2, 5],
                       "&:hover": {
                         bgcolor: "transparent",
                         color: "#FFB700",
@@ -144,12 +152,12 @@ export default function ProductSlider() {
                   </Button>
                 </Box>
                 <Box
-                  sx={{ width: ["100%", "80%", "80%", "rem"], mt: [2, 2, -10] }}
+                  sx={{ width: ["100%", "70%", "80%", "rem"], mt: [2, 2, -10] }}
                 >
                   {" "}
                   <img
                     src={slide.imgSrc}
-                    style={{ width: "100%", height: "auto" }}
+                    style={{ width: "100%" }}
                     alt={slide.title}
                   />
                 </Box>
@@ -183,9 +191,8 @@ export default function ProductSlider() {
 
           @media (max-width: 600px) { /* For mobile devices */
             .customSwiper {
+             direction: horizontal !important;
               width: 100% !important;
-              height: 120% !important;
-              margin-top: 3rem !important;
             }
           }
 
@@ -214,7 +221,7 @@ export default function ProductSlider() {
             background-color: rgba(255, 255, 255, 0.4) !important;
             opacity: 1 !important;
             transition: background-color 0.3s ease !important;
-            margin: 20px 0 !important;
+            margin: 20px 10px !important;
           }
 
           .customSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {

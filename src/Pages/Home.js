@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Button, Card, CardContent, Typography, Paper, TextField, InputLabel, Select, MenuItem, FormControl } from "@mui/material";
 import { styled } from '@mui/material/styles'
 import Navbar from "../Components/Navbar"
@@ -21,7 +21,19 @@ const Home = () => {
     },
   });
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+  const [isTablet, setIsTablet] = useState(window.innerWidth >= 600 && window.innerWidth < 960);
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 600);
+    setIsTablet(window.innerWidth >= 600 && window.innerWidth < 960);
+  };
 
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const [person, setperson] = useState('');
   const [formData, setFormData] = useState({
@@ -138,7 +150,7 @@ const Home = () => {
             <Grid container spacing={2.5}>
               <Grid item size={{ xs: 12, md: 8 }}>
                 <Box
-                  data-aos="fade-right"
+                  data-aos={isMobile || isTablet ? "fade-up" : "fade-right"}
                   data-aos-offset="300"
                   data-aos-easing="ease-in-sine"
                   data-aos-duration="2000"
@@ -189,7 +201,7 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 4 }}>
                 <Box
-                  data-aos="fade-left"
+                  data-aos={isMobile || isTablet ? "fade-up" : "fade-left"}
                   data-aos-offset="300"
                   data-aos-easing="ease-in-sine"
                   data-aos-duration="2000"
@@ -218,7 +230,7 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 4 }} sx={{ width: '100%' }}>
                 <Box
-                  data-aos="fade-right"
+                  data-aos={isMobile || isTablet ? "fade-up" : "fade-right"}
                   data-aos-offset="300"
                   data-aos-easing="ease-in-sine"
                   data-aos-duration="2000"
@@ -257,7 +269,7 @@ const Home = () => {
               </Grid>
               <Grid item size={{ xs: 12, md: 8 }} sx={{ width: '100%' }}>
                 <Box
-                  data-aos="fade-left"
+                  data-aos={isMobile || isTablet ? "fade-up" : "fade-left"}
                   data-aos-offset="300"
                   data-aos-easing="ease-in-sine"
                   data-aos-duration="2000"
@@ -465,7 +477,7 @@ const Home = () => {
             </Box>
 
             <Box
-              data-aos="fade-left"
+              data-aos={isMobile || isTablet ? "fade-up" : "fade-left"}
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
               data-aos-duration="1500"
