@@ -15,6 +15,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "swiper/css/effect-fade";
 import "aos/dist/aos.css";
+import ScrollDownAnimation from "./ScrollMouse";
 
 const slideData = [
   {
@@ -77,11 +78,11 @@ export default function ProductSlider() {
             clickable: true,
           }}
           autoplay={{
-            delay: 5000, 
-            disableOnInteraction: false, 
+            delay: 5000,
+            disableOnInteraction: false,
           }}
           effect="fade"
-          modules={[Pagination, Autoplay]} 
+          modules={[Pagination, Autoplay]}
           className="customSwiper"
         >
           {slideData.map((slide, index) => (
@@ -145,7 +146,7 @@ export default function ProductSlider() {
                       fontWeight: "bold",
                       borderRadius: "50px",
                       border: "2px solid #FFB700",
-                      px: [2, 3], 
+                      px: [2, 3],
                       my: [2, 2, 5],
                       "&:hover": {
                         bgcolor: "transparent",

@@ -88,6 +88,9 @@ const ContactUs = () => {
         },
     ];
 
+    useEffect(() => {
+        document.title = "Contact Us";
+    }, []);
 
 
     const handleSubmit = (event) => {
@@ -136,7 +139,7 @@ const ContactUs = () => {
                                 textAlign: 'center'
                             }}
                         >
-                            Contact
+                            Contact Us
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                             <Link to="/home" style={{ textDecoration: "none" }}>
