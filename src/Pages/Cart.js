@@ -63,7 +63,7 @@ const Cart = () => {
                             Cart
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                            <Link to="/home">
+                            <Link to="/home" style={{ textDecoration: "none" }}>
                                 <Typography
                                     sx={{
                                         color: "#9A9EA1",
