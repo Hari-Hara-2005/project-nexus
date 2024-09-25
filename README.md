@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# FastFood TNC
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FastFood TNC is a delicious fast food restaurant website offering a variety of items such as burgers, pizzas, and more. Customers can order online for delivery or takeout through the website.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the live site here: [FastFood TNC](https://project-nexus-hari-haras-projects.vercel.app/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop views.
+- **Swiper Slider**: Dynamic and interactive slider showcasing featured fast food items.
+- **SEO Optimized**: Open Graph tags, Twitter card, and structured data for improved search engine visibility.
+- **Social Sharing**: Shareable content via social media platforms like Twitter and Facebook.
+- **AOS Animations**: Smooth animations for a better user experience.
+- **Order Now Feature**: Direct call-to-action buttons for easy ordering.
+- **Firebase Authentication**: Secure login and registration functionality for users.
+- **Cart with Local Storage**: Add and store items in the cart, with local storage to persist items across sessions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**
+- **Material UI**
+- **Swiper**
+- **AOS (Animate on Scroll)**
+- **Firebase Authentication**
+- **Local Storage for Cart**
+- **JavaScript**
+- **Frontend**: React.js, Material UI, AOS (Animate On Scroll) for animations
+- **Backend**: Firebase for handling user data
+- **Hosting**: Vercel
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Setup
 
-### `npm run build`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Hari-Hara-2005/project-nexus
+    cd restaurant
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+    ```bash
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Open `http://localhost:3000` in your browser to view the project.
 
-### `npm run eject`
+## Meta Information
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Website Name**: FastFood TNC
+- **Description**: Delicious fast food restaurant offering burgers, pizzas, and more. Order online for delivery or takeout.
+- **Keywords**: fast food, restaurant, burgers, pizzas, takeout, delivery, snacks
+- **Author**: Hari Hara
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Social Sharing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+FastFood TNC supports sharing on social media through Open Graph and Twitter Cards.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Open Graph Image**: ![Open Graph Image](./Assets/Webclip.png)
+- **Twitter Image**: ![Twitter Image](./Assets/Webclip.png)
 
-## Learn More
+## Structured Data
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The website includes structured data to improve SEO. Here is an example of the data:
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "FastFood TNC",
+  "image": "https://project-nexus-hari-haras-projects.vercel.app/Assets/Webclip.png",
+  "description": "Delicious fast food restaurant offering burgers, pizzas, and more. Order online for delivery or takeout!",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Fast Food Lane",
+    "addressLocality": "Your City",
+    "addressRegion": "Your State",
+    "postalCode": "12345",
+    "addressCountry": "Your Country"
+  },
+  "telephone": "+1-234-567-8901",
+  "url": "https://project-nexus-hari-haras-projects.vercel.app/",
+  "menu": "https://project-nexus-hari-haras-projects.vercel.app/shop",
+  "openingHours": "Mo-Su 10:00-22:00"
+}
