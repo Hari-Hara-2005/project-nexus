@@ -122,7 +122,7 @@ export const About = () => {
                             About Us
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                            <Link to="/"><Typography
+                            <Link to="/home" style={{ textDecoration: "none"}} ><Typography
                                 sx={{
                                     color: "#9A9EA1",
                                     fontWeight: "bold",
@@ -266,7 +266,7 @@ export const About = () => {
                 <Box sx={{ px: [2, 10], py: [0, 5] }} >
                     <FeatureContainer>
                         <Grid container spacing={0} justifyContent="center" data-aos="fade-up"
-                            data-aos-anchor-placement="top-bottom"  data-aos-duration="2000">
+                            data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
                             <FeatureItem item xs={6} md={3}>
                                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                                     <Player

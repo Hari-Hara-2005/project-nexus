@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, EffectFade } from "swiper/modules";
+import { Pagination, EffectFade, Autoplay } from "swiper/modules"; // Import Autoplay
 import {
   Box,
   Button,
@@ -14,8 +14,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "swiper/css/effect-fade";
-import AOS from "aos";
 import "aos/dist/aos.css";
+
 const slideData = [
   {
     title: "Discover Delight at Fastfood TNC",
@@ -64,6 +64,7 @@ export default function ProductSlider() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+
   return (
     <>
       <ThemeProvider theme={fonttheme}>
@@ -75,8 +76,12 @@ export default function ProductSlider() {
           pagination={{
             clickable: true,
           }}
+          autoplay={{
+            delay: 5000, 
+            disableOnInteraction: false, 
+          }}
           effect="fade"
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]} 
           className="customSwiper"
         >
           {slideData.map((slide, index) => (
@@ -140,8 +145,8 @@ export default function ProductSlider() {
                       fontWeight: "bold",
                       borderRadius: "50px",
                       border: "2px solid #FFB700",
-                      px: [2, 3], // Responsive padding
-                      my: [2,2, 5],
+                      px: [2, 3], 
+                      my: [2, 2, 5],
                       "&:hover": {
                         bgcolor: "transparent",
                         color: "#FFB700",

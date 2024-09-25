@@ -137,7 +137,7 @@ export default function Navbar(props) {
           item.name === "Shop" ? (
             <React.Fragment key={index}>
               {isMobile ? (
-                <Box sx={{ width: ["40%", "20%"], ml: [3.5, 5] }}>
+                <Box sx={{ width: ["35%", "20%"], ml:[2,5] }}>
                   <CusAccordion
                     head={
                       <Typography
@@ -330,7 +330,6 @@ export default function Navbar(props) {
           }}
         >
           <Toolbar
-          
             sx={{
               backgroundColor: "transparent",
               py: [0, 0, 2, 1, 1],

@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Navigation, Autoplay } from "swiper/modules";
 import { Facebook, Twitter, Pinterest, LinkedIn } from "@mui/icons-material";
 
-// Replacing industryData with chefs array
+
 const chefs = [
   {
     name: "Wade Warren",

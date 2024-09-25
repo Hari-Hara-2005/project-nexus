@@ -139,7 +139,7 @@ const ContactUs = () => {
                             Contact
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                            <Link to="/">
+                            <Link to="/home" style={{ textDecoration: "none" }}>
                                 <Typography
                                     sx={{
                                         color: "#9A9EA1",
@@ -218,7 +218,7 @@ const ContactUs = () => {
                 <Box
                     sx={{ pb: 10 }}
                     data-aos="fade-down"
-                     data-aos-duration="2500"
+                    data-aos-duration="2500"
                 >
                     <Box
                         sx={{

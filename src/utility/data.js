@@ -161,7 +161,7 @@ export const pizza = [
       '3': { currentPrice: '₹1,000', originalPrice: '₹1,100' },
       '4': { currentPrice: '₹2,000', originalPrice: '₹2,200' },
     },
-    image: 'https://img.freepik.com/free-photo/beef-mushroom-pizza-with-onion-cheese-wooden-plate_140725-10431.jpg?t=st=1726926430~exp=1726930030~hmac=c20821e7a4acce6ce1860895b41f027f80ce4d781a6aff9fade5e60b157e2dd5&w=826',
+    image: 'Assets/ProductImages/beef-mushroom-pizza.avif',
   },
   {
     id: 2,
@@ -173,7 +173,7 @@ export const pizza = [
       '3': { currentPrice: '₹1,100', originalPrice: '₹1,200' },
       '4': { currentPrice: '₹2,200', originalPrice: '₹2,400' },
     },
-    image: 'https://img.freepik.com/free-photo/pizza-pizza-filled-with-tomatoes-salami-olives_140725-1200.jpg?w=826&t=st=1726924640~exp=1726925240~hmac=01317d9d888ef0a36cee44d96410b99205933fc44563cc1dc9f179341903998a',
+    image: 'Assets/ProductImages/pizza-with-cheese-tomatoes.avif',
   },
   {
     id: 3,
@@ -185,7 +185,7 @@ export const pizza = [
       '3': { currentPrice: '₹960', originalPrice: '₹1,000' },
       '4': { currentPrice: '₹1,920', originalPrice: '₹2,000' },
     },
-    image: 'https://img.freepik.com/free-photo/mixed-ingredient-pizza-with-cheese-tomatoes_114579-3585.jpg?t=st=1726926537~exp=1726930137~hmac=4525e5ee474b45b2f929dc02360a8d02332f2cbb3cf0014e57514a097ed9588d&w=826',
+    image: 'Assets/ProductImages/pizza-filled-with-tomatoes.avif',
   },
   {
     id: 4,
@@ -197,7 +197,7 @@ export const pizza = [
       '3': { currentPrice: '₹1,160', originalPrice: '₹1,240' },
       '4': { currentPrice: '₹2,320', originalPrice: '₹2,400' },
     },
-    image: 'https://img.freepik.com/free-photo/large-mixed-pizza-with-meat_140725-1274.jpg?t=st=1726926316~exp=1726929916~hmac=35d170909450e67dfe0bd2cee99453fb06b0a8b605e188bee94b7d5e79c16b3b&w=740',
+    image: 'Assets/ProductImages/delicious-pizza-indoors.avif',
   },
   {
     id: 5,
@@ -209,7 +209,7 @@ export const pizza = [
       '3': { currentPrice: '₹1,040', originalPrice: '₹1,100' },
       '4': { currentPrice: '₹2,080', originalPrice: '₹2,200' },
     },
-    image: 'https://img.freepik.com/free-photo/delicious-pizza-indoors_23-2150873912.jpg?t=st=1726926495~exp=1726930095~hmac=a49aa87479f234ae35f81a88e3a83fe1038b9cd63148627c2960b619a57feb10&w=740',
+    image: 'Assets/ProductImages/large-mixed-pizza-with-meat.avif',
   },
 ];
 
@@ -224,7 +224,7 @@ export const burgers = [
       '3': { currentPrice: '₹600', originalPrice: '₹680' },
       '4': { currentPrice: '₹1,200', originalPrice: '₹1,360' },
     },
-    image: 'https://img.freepik.com/free-photo/delicious-looking-3d-burger-with-simple-background_23-2150914861.jpg?t=st=1726931135~exp=1726934735~hmac=512a2d403597593779a16e057196ae545e4b0b180107ebeb26d782d2ddfa13b8&w=1060',
+    image: 'Assets/ProductImages/delicious-burger.avif',
   },
   {
     id: 7,
@@ -236,7 +236,7 @@ export const burgers = [
       '3': { currentPrice: '₹800', originalPrice: '₹880' },
       '4': { currentPrice: '₹1,600', originalPrice: '₹1,760' },
     },
-    image: 'https://img.freepik.com/free-photo/big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-red-onion-wooden-table_2829-19631.jpg?t=st=1726931070~exp=1726934670~hmac=a82a3f4989a73da38d44003a05422043a570dc9dad01a27b4550c3b81ff66f5c&w=1380',
+    image: 'Assets/ProductImages/burger-melting-chesses.avif',
   },
   {
     id: 8,
@@ -248,7 +248,7 @@ export const burgers = [
       '3': { currentPrice: '₹720', originalPrice: '₹800' },
       '4': { currentPrice: '₹1,440', originalPrice: '₹1,600' },
     },
-    image: 'https://img.freepik.com/free-photo/close-up-delicious-burger-meal_23-2151433866.jpg?t=st=1726931097~exp=1726934697~hmac=016149f1eb76be168214c59f936c7389498657a29c3bfaebdcf84025d8f43058&w=740',
+    image: 'Assets/ProductImages/burger-cheese-tomato.avif',
   },
   {
     id: 9,
@@ -260,7 +260,7 @@ export const burgers = [
       '3': { currentPrice: '₹880', originalPrice: '₹960' },
       '4': { currentPrice: '₹1,760', originalPrice: '₹1,920' },
     },
-    image: 'https://img.freepik.com/free-photo/craft-beef-burger-french-fries-wooden-table-melting-chesses-isolated-black-background-ai-generative_157027-1745.jpg?t=st=1726931164~exp=1726934764~hmac=11352416406ccec32a9f39021f8cd2704bb2191cd7c5d02d8200a44da0a9beea&w=1380',
+    image: 'Assets/ProductImages/delicious-burger-meal.avif',
   },
   {
     id: 10,
@@ -272,7 +272,7 @@ export const burgers = [
       '3': { currentPrice: '₹760', originalPrice: '₹840' },
       '4': { currentPrice: '₹1,520', originalPrice: '₹1,680' },
     },
-    image: 'https://img.freepik.com/free-vector/hand-drawn-pattern-background_23-2150905271.jpg?t=st=1726931234~exp=1726934834~hmac=56943ed1af6c6ae539ac860d67fc26ec29dfb483e614cd952e23dce22642cfc2&w=1380',
+    image: 'Assets/ProductImages/hand-drawn-pattern.avif',
   },
 ];
 
@@ -287,7 +287,7 @@ export const juices = [
       '3': { currentPrice: '₹400', originalPrice: '₹480' },
       '4': { currentPrice: '₹800', originalPrice: '₹960' },
     },
-    image: 'https://img.freepik.com/free-photo/fresh-orange-juice-glass-dark-wooden-background_1150-45572.jpg?t=st=1726933558~exp=1726937158~hmac=6becea1c7b80cb281f1cc7a0038490bfd826f34d9b8e48a653c8ddd7b3b38d5f&w=1380',
+    image: 'Assets/ProductImages/fresh-orange-juice.avif',
   },
   {
     id: 12,
@@ -299,7 +299,7 @@ export const juices = [
       '3': { currentPrice: '₹480', originalPrice: '₹560' },
       '4': { currentPrice: '₹960', originalPrice: '₹1,120' },
     },
-    image: 'https://img.freepik.com/free-photo/glass-green-apple-healthy-tea-put-fresh-green-apples_1150-34479.jpg?t=st=1726933615~exp=1726937215~hmac=e1b66cf3a68c5e222e2e0d5ebcea4a9440db3689a5660f67f0ef6675a48d4bfe&w=1380',
+    image: 'Assets/ProductImages/glass-green-apple.avif',
   },
   {
     id: 13,
@@ -311,7 +311,7 @@ export const juices = [
       '3': { currentPrice: '₹520', originalPrice: '₹600' },
       '4': { currentPrice: '₹1,040', originalPrice: '₹1,200' },
     },
-    image: 'https://img.freepik.com/free-photo/side-view-black-grape-juice-glass-with-grapes-basket-gray-background_141793-27306.jpg?t=st=1726933684~exp=1726937284~hmac=7b128569d2b3e82e623877cc9fe8c403b5dcbb2b41c8f2cab15092dab0a55fff&w=1380',
+    image: 'Assets/ProductImages/black-grape-juice.avif',
   },
   {
     id: 14,
@@ -323,7 +323,7 @@ export const juices = [
       '3': { currentPrice: '₹560', originalPrice: '₹640' },
       '4': { currentPrice: '₹1,120', originalPrice: '₹1,280' },
     },
-    image: 'https://img.freepik.com/free-photo/pineapple-juice-bottle-wooden-surface_1150-41883.jpg?t=st=1726933747~exp=1726937347~hmac=6d44699ee8cf35ad7dc435bd11ee45df3141a882c1e1232a849ceddb1dae6db0&w=740',
+    image: 'Assets/ProductImages/pineapple-juice-bottle.avif',
   },
   {
     id: 15,
@@ -335,7 +335,7 @@ export const juices = [
       '3': { currentPrice: '₹600', originalPrice: '₹680' },
       '4': { currentPrice: '₹1,200', originalPrice: '₹1,360' },
     },
-    image: 'https://img.freepik.com/free-photo/delicious-mango-still-life_23-2151542230.jpg?t=st=1726933803~exp=1726937403~hmac=91e25f198dca0513833b7e2b1516ac764e864bcf74ae841b7967877d3cf0fe9c&w=740',
+    image: 'Assets/ProductImages/delicious-mango.avif',
   },
 ];
 
@@ -350,7 +350,7 @@ export const noodles = [
       '3': { currentPrice: '₹720', originalPrice: '₹800' },
       '4': { currentPrice: '₹1,440', originalPrice: '₹1,600' },
     },
-    image: 'https://img.freepik.com/free-photo/hot-spicy-stir-fried-instant-noodle-with-beef-vegetable-ceramic-bowl_23-2148093232.jpg?t=st=1726934197~exp=1726937797~hmac=cb9ef35609f4b0f8fd29bdf58d6b7a9417167865f1a5dc17fd63f7134f12f4c0&w=740',
+    image: 'Assets/ProductImages/hot-spicy-stir-fried.avif',
   },
   {
     id: 17,
@@ -362,7 +362,7 @@ export const noodles = [
       '3': { currentPrice: '₹600', originalPrice: '₹680' },
       '4': { currentPrice: '₹1,200', originalPrice: '₹1,360' },
     },
-    image: 'https://img.freepik.com/free-photo/delicious-asian-noodles-concept_23-2148773773.jpg?t=st=1726934240~exp=1726937840~hmac=56b72c8854b578d22d6bcc8f32a8123732d9263ecea5702ccb7c88bf22353a42&w=740',
+    image: 'Assets/ProductImages/delicious-asian-noodles.avif',
   },
   {
     id: 18,
@@ -374,7 +374,7 @@ export const noodles = [
       '3': { currentPrice: '₹760', originalPrice: '₹840' },
       '4': { currentPrice: '₹1,520', originalPrice: '₹1,680' },
     },
-    image: 'https://img.freepik.com/free-photo/bowl-noodles-with-green-onion-top_1340-23426.jpg?t=st=1726934344~exp=1726937944~hmac=a7c7dd832e166f864ad66973e0b351eaa71dd157491e1b795fd13771d734a1ad&w=1380',
+    image: 'Assets/ProductImages/bowl-noodles-with-green.avif',
   },
   {
     id: 19,
@@ -386,7 +386,7 @@ export const noodles = [
       '3': { currentPrice: '₹640', originalPrice: '₹720' },
       '4': { currentPrice: '₹1,280', originalPrice: '₹1,440' },
     },
-    image: 'https://img.freepik.com/free-photo/black-bowl-filled-with-noodle-soup-corn-grey-cloth-with-garlic-mushrooms_23-2148320824.jpg?t=st=1726934384~exp=1726937984~hmac=8ce78dba0af11749792e8f9324fd100c150257ce19ed8e2c4a0a4e5272bb031f&w=740',
+    image: 'Assets/ProductImages/noodle-soup-corn-grey-cloth.avif',
   },
   {
     id: 20,
@@ -398,6 +398,6 @@ export const noodles = [
       '3': { currentPrice: '₹1,000', originalPrice: '₹1,120' },
       '4': { currentPrice: '₹2,000', originalPrice: '₹2,240' },
     },
-    image: 'https://img.freepik.com/free-photo/thai-food-noodles-spicy-boil-with-seafood-pork-hot-pot_1150-27872.jpg?t=st=1726934426~exp=1726938026~hmac=645e79a37d8a1ee638f780bad9377af0e60aaff0be300549a11f05d89bd467ae&w=740',
+    image: 'Assets/ProductImages/noodles-spicy-boil-with-seafood.avif',
   },
 ];
