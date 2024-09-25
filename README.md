@@ -33,20 +33,23 @@ Check out the live site here: [FastFood TNC](https://project-nexus-hari-haras-pr
 ## Installation and Setup
 
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/Hari-Hara-2005/project-nexus
-    cd restaurant
-    ```
+
+   ```bash
+   git clone https://github.com/Hari-Hara-2005/project-nexus
+   cd restaurant
+   ```
 
 2. Install the dependencies:
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. Start the development server:
-    ```bash
-    npm start
-    ```
+
+   ```bash
+   npm start
+   ```
 
 4. Open `http://localhost:3000` in your browser to view the project.
 
@@ -61,12 +64,13 @@ Check out the live site here: [FastFood TNC](https://project-nexus-hari-haras-pr
 
 FastFood TNC supports sharing on social media through Open Graph and Twitter Cards.
 
-- **Open Graph Image**: ![Open Graph Image](./Assets/Webclip.png)
-- **Twitter Image**: ![Twitter Image](./Assets/Webclip.png)
+- **Open Graph Image**: ![Open Graph Image](https://github.com/Hari-Hara-2005/project-nexus/blob/main/public/Assets/Webclip.png)
+- **Twitter Image**: ![Twitter Image](https://github.com/Hari-Hara-2005/project-nexus/blob/main/public/Assets/Webclip.png)
 
 ## Structured Data
 
 The website includes structured data to improve SEO. Here is an example of the data:
+
 ```json
 {
   "@context": "https://schema.org",
@@ -87,3 +91,4 @@ The website includes structured data to improve SEO. Here is an example of the d
   "menu": "https://project-nexus-hari-haras-projects.vercel.app/shop",
   "openingHours": "Mo-Su 10:00-22:00"
 }
+```
