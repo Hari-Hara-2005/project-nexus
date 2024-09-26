@@ -22,8 +22,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -91,7 +92,7 @@ const Register = () => {
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-
+        navigate('/home');
 
         const userRef = doc(db, 'users', user.uid);
         await setDoc(userRef, {
